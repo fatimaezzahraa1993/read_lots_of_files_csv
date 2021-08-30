@@ -1,0 +1,15 @@
+
+import pandas as pd
+import os
+
+data_files = os.listdir('/home/samt/fati/rich_poor/')  # we use the path of the files we want to upload
+
+
+def load_files(files):
+	for file in files:
+		yield pd.read_csv(file)
+		
+
+data = pd.concat(load_files(data_files))
+
+
