@@ -1,0 +1,14 @@
+With this code, we can read many CSV files using their path and OS, and we can also specify what are exactly the columns we want.
+it means we canupload csv files at once with initial filtring
+## Code_python ##
+
+import pandas as pd
+import os
+
+data_files = os.listdir('/home/samt/fati/rich_poor/')  # we use the path of the files we want to upload
+
+def load_file(files):
+    for file in files:
+        yield pd.read_csv(file,  usecols = [''columns' names that we are interested in"] )
+		
+data = pd.concat(load_file(datafiles))   
